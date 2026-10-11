@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carbon-tracker">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">🌍 Carbon Footprint Tracker</h1>
+                <p class="subtitle">Monitor your digital impact</p>
+            </div>
+        </header>
+
+        <!-- Main Display Area -->
+        <main class="main-content">
+            <!-- Circular Progress Meter -->
+            <div class="circular-meter-container">
+                <svg class="circular-meter" viewBox="0 0 100 100">
+                    <circle class="meter-background" cx="50" cy="50" r="45"></circle>
+                    <circle class="meter-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="meter-text">
+                    <span class="meter-percentage" id="carbonPercentage">0%</span>
+                    <span class="meter-label">Carbon</span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <!-- Tab Count Card -->
+                <div class="stat-card">
+                    <div class="stat-icon">📑</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="tabCount">0</div>
+                        <div class="stat-label">Active Tabs</div>
+                    </div>
+                </div>
+
+                <!-- Carbon Footprint Card -->
+                <div class="stat-card">
+                    <div class="stat-icon">🌫️</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="carbonAmount">0g</div>
+                        <div class="stat-label">CO₂ Today</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Badge -->
+            <div class="status-section">
+                <div class="status-badge" id="statusBadge">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="statusText">Loading...</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span>Tab Usage</span>
+                    <span class="progress-max">Max: 30</span>
+                </div>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <div class="progress-ticks">
+                    <span>0</span>
+                    <span>10</span>
+                    <span>20</span>
+                    <span>30</span>
+                </div>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div class="suggestions-section">
+                <div class="suggestions-header">💡 Recommendation</div>
+                <p class="suggestions-text" id="suggestionsText">Analyzing your tab usage...</p>
+            </div>
+
+            <!-- Warning Message (Hidden by default) -->
+            <div class="warning-container" id="warningContainer" hidden>
+                <div class="warning-message">
+                    <span class="warning-icon">⚠️</span>
+                    <span id="warningText">High carbon usage detected!</span>
+                </div>
+            </div>
+
+            <!-- Daily Stats Section -->
+            <div class="daily-stats">
+                <div class="daily-stats-header">📊 Today's Carbon Savings</div>
+                <div class="savings-value" id="savingsValue">0g CO₂</div>
+                <div class="savings-label">Saved by closing tabs</div>
+            </div>
+
+            <!-- Eco Tip Section -->
+            <div class="eco-tip-section">
+                <div class="eco-tip-label">🌱 Eco Tip</div>
+                <p class="eco-tip-text" id="ecoTip">Loading eco-friendly tip...</p>
+            </div>
+        </main>
+
+        <!-- Button Group -->
+        <div class="button-group">
+            <button class="btn btn-primary" id="closeTabsBtn">
+                🗑️ Close Inactive Tabs
+            </button>
+            <button class="btn btn-secondary" id="refreshBtn">
+                🔄 Refresh Data
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Every closed tab helps reduce digital carbon emissions</p>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
